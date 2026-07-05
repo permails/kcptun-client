@@ -9,10 +9,10 @@ PKG_NAME:=kcptun
 PKG_VERSION:=20240919
 PKG_RELEASE:=1
 
-# Use modern GitHub standard archive download format
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://github.com/xtaci/kcptun/archive/refs/tags/v$(PKG_VERSION).tar.gz?
-PKG_HASH:=skip
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/AnakinSong/kcptun.git
+PKG_SOURCE_VERSION:=92ec4e37cf67fa7eae88e5d5261266be65baf33b
+PKG_MIRROR_HASH:=skip
 
 PKG_MAINTAINER:=konvict <logo@permails.com>
 PKG_LICENSE:=MIT
