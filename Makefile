@@ -14,7 +14,7 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/xtaci/kcptun/archive/refs/tags/v$(PKG_VERSION).tar.gz?
 PKG_HASH:=skip
 
-PKG_MAINTAINER:=konvict
+PKG_MAINTAINER:=konvict <logo@permails.com>
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE.md
 
