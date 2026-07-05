@@ -1,18 +1,19 @@
 #!/bin/sh /etc/rc.common
 
-# 采用 OpenWrt 现代 procd 守护进程规范
+# Use OpenWrt modern procd daemon specification
 USE_PROCD=1
 START=99
 
 PROG=/usr/bin/kcptun-client
 
 start_service() {
-	# 此处为启动命令示例，可根据实际需求修改读取 uci 配置
-	# 默认为读取 /etc/kcptun.json 或传入特定参数
+	# Setup the procd instance
+	# Default setup assumes reading from a specific config file or passing arguments
 	
 	procd_open_instance
 	procd_set_param command $PROG 
-	# 示范：如果使用配置文件可以取消下面这行的注释
+	
+	# Example: Uncomment the following line if using a configuration file
 	# procd_append_param command -c /etc/kcptun.json
 	
 	procd_set_param respawn
