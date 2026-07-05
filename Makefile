@@ -32,22 +32,21 @@ include $(INCLUDE_DIR)/package.mk
 # Include OpenWrt standard Golang build macros
 include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
 
-define Package/kcptun
+define Package/kcptun-client
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Web Servers/Proxies
-  TITLE:=KCPTun (Modern Go Build)
+  TITLE:=KCPTun Client (Modern Go Build)
   URL:=https://github.com/xtaci/kcptun
   DEPENDS:=$(GO_ARCH_DEPENDS)
-  PROVIDES:=kcptun-client
 endef
 
-define Package/kcptun/description
+define Package/kcptun-client/description
   A Secure Tunnel Based On KCP with N:M Multiplexing.
   Built from official xtaci/kcptun source using modern OpenWrt 25.x standards.
 endef
 
-define Package/kcptun/install
+define Package/kcptun-client/install
 	$(call GoPackage/Package/Install/Bin,$(PKG_INSTALL_DIR))
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_DIR) $(1)/etc/init.d
@@ -59,5 +58,5 @@ define Package/kcptun/install
 	$(INSTALL_BIN) ./files/kcptun.init $(1)/etc/init.d/kcptun
 endef
 
-$(eval $(call GoBinPackage,kcptun))
-$(eval $(call BuildPackage,kcptun))
+$(eval $(call GoBinPackage,kcptun-client))
+$(eval $(call BuildPackage,kcptun-client))
