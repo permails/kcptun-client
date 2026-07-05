@@ -39,6 +39,7 @@ define Package/kcptun
   TITLE:=KCPTun (Modern Go Build)
   URL:=https://github.com/xtaci/kcptun
   DEPENDS:=$(GO_ARCH_DEPENDS)
+  PROVIDES:=kcptun-client
 endef
 
 define Package/kcptun/description
