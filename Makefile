@@ -25,10 +25,14 @@ PKG_USE_MIPS16:=0
 
 # Core Go module declaration
 GO_PKG:=github.com/xtaci/kcptun
-GO_PKG_BUILD_PKG:=github.com/xtaci/kcptun/client github.com/xtaci/kcptun/server
-GO_PKG_INSTALL_EXTRA:=go.mod go.sum vendor/modules.txt
+GO_PKG_INSTALL_EXTRA:=go.mod go.sum
 # Automatically inject compile version
 GO_PKG_LDFLAGS_X:=main.VERSION=$(PKG_VERSION)-OpenWrt
+
+define Build/Prepare
+	$(call Build/Prepare/Default)
+	rm -rf $(PKG_BUILD_DIR)/vendor/
+endef
 
 include $(INCLUDE_DIR)/package.mk
 # Include OpenWrt standard Golang build macros
