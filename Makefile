@@ -9,11 +9,6 @@ PKG_NAME:=kcptun
 PKG_VERSION:=20240919
 PKG_RELEASE:=1
 
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/kongkx/kcptun-archive.git
-PKG_SOURCE_VERSION:=1d256a464cf9b971d3381f4326955995b0d5964d
-PKG_MIRROR_HASH:=skip
-
 PKG_MAINTAINER:=konvict <logo@permails.com>
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE.md
@@ -27,10 +22,10 @@ GO_PKG:=github.com/dumbybumby/kcptun-archive
 GO_PKG_BUILD_PKG:=github.com/dumbybumby/kcptun-archive/client github.com/dumbybumby/kcptun-archive/server
 GO_PKG_LDFLAGS_X:=main.VERSION=$(PKG_VERSION)-OpenWrt
 
-# Delete the vendor directory so Go uses normal module download
-# instead of broken vendor mode under OpenWrt's build system
+# Use local source code
 define Build/Prepare
-	$(call Build/Prepare/Default)
+	mkdir -p $(PKG_BUILD_DIR)
+	cp -a ./src/* $(PKG_BUILD_DIR)/
 	rm -rf $(PKG_BUILD_DIR)/vendor
 endef
 
