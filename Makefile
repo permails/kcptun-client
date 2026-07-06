@@ -25,6 +25,7 @@ PKG_USE_MIPS16:=0
 
 # Core Go module declaration
 GO_PKG:=github.com/xtaci/kcptun
+GO_PKG_INSTALL_EXTRA:=go.mod go.sum
 # Automatically inject compile version
 GO_PKG_LDFLAGS_X:=main.VERSION=$(PKG_VERSION)-OpenWrt
 
