@@ -10,8 +10,8 @@ PKG_VERSION:=20240919
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/AnakinSong/kcptun.git
-PKG_SOURCE_VERSION:=92ec4e37cf67fa7eae88e5d5261266be65baf33b
+PKG_SOURCE_URL:=https://github.com/kongkx/kcptun-archive.git
+PKG_SOURCE_VERSION:=1d256a464cf9b971d3381f4326955995b0d5964d
 PKG_MIRROR_HASH:=skip
 
 PKG_MAINTAINER:=konvict <logo@permails.com>
