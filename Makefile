@@ -9,7 +9,7 @@ PKG_NAME:=kcptun
 PKG_VERSION:=20240919
 PKG_RELEASE:=1
 
-PKG_MAINTAINER:=konvict <logo@permails.com>
+PKG_MAINTAINER:=permails <logo@permails.com>
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE.md
 
